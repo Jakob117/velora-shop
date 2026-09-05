@@ -1,43 +1,42 @@
-export type ProductLine = 'essential' | 'classic' | 'atelier';
-export type ProductForm = 'rectangular' | 'square' | 'tall' | 'flat' | 'round';
-export type ProductSize = 'S' | 'M' | 'L' | 'XL';
-export type OrganizerType = 'counter' | 'drawer' | 'shelf' | 'pullout';
-
-export interface Product {
-  id: string;
-  name: string;
-  line: ProductLine;
-  form: ProductForm;
-  size: ProductSize;
-  price: number;
-  image: string;
-  description: string;
-  features: string[];
-  isSmart?: boolean;
-  dimensions?: {
-    width: number;
-    height: number;
-    depth: number;
-  };
+export interface CartItem {
+  productId: string
+  quantity: number
+  configuration: ProductConfiguration
 }
 
-export interface CartItem {
-  productId: string;
-  quantity: number;
-  configuration?: {
-    line: ProductLine;
-    form: ProductForm;
-    size: ProductSize;
-    isSmart: boolean;
-  };
+export interface ProductConfiguration {
+  line: ProductLine
+  form: string
+  size: string
+  isSmart: boolean
+}
+
+export type ProductLine = 'essential' | 'classic' | 'atelier'
+
+export interface Product {
+  id: string
+  name: string
+  line: ProductLine
+  form: string
+  size: string
+  price: number
+  image: string
+  description: string
+  features: string[]
+  dimensions?: {
+    width: number
+    height: number
+    depth: number
+  }
+  isSmart?: boolean
 }
 
 export interface ConfiguratorState {
-  line: ProductLine;
-  form: ProductForm;
-  size: ProductSize;
-  isSmart: boolean;
-  quantity: number;
-  organizer?: OrganizerType;
-  totalPrice: number;
+  line: ProductLine
+  form: string
+  size: string
+  isSmart: boolean
+  quantity: number
+  organizer?: string
+  totalPrice: number
 }

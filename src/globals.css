@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Components */
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-velora-accent text-white font-semibold rounded-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 border-2 border-velora-gold text-velora-gold font-semibold rounded-lg hover:bg-velora-gold/10 transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-display font-bold text-center mb-16;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-velora-gold to-velora-accent bg-clip-text text-transparent;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 165, 116, 0.6);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4a574;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c67c4e;
+}
+
+/* Selection Styling */
+::selection {
+  background-color: #c67c4e;
+  color: #ffffff;
+}

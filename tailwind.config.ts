@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
@@ -9,20 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        velora: {
-          dark: '#1a1a1a',
-          light: '#f5f5f5',
-          accent: '#2d5016',
-          gold: '#d4a574',
-          silver: '#c0c0c0',
-        },
+        'velora-dark': '#1a1a1a',
+        'velora-gold': '#d4a574',
+        'velora-accent': '#c67c4e',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
+        display: ['Georgia', 'serif'],
+        sans: ['system-ui', '-apple-system', 'sans-serif'],
+      },
+      spacing: {
+        '128': '32rem',
       },
     },
   },
   plugins: [],
-};
-export default config;
+}
+export default config
